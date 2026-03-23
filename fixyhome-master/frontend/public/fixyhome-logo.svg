@@ -1,0 +1,53 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Définition des dégradés -->
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icône maison moderne -->
+  <g transform="translate(10, 15)">
+    <!-- Toit -->
+    <path d="M15 8 L30 0 L45 8 L42 8 L42 25 L18 25 L18 8 Z" fill="url(#blueGradient)" />
+    
+    <!-- Porte -->
+    <rect x="27" y="15" width="6" height="10" fill="#ffffff" rx="1" />
+    
+    <!-- Fenêtres -->
+    <rect x="21" y="11" width="4" height="4" fill="#ffffff" rx="0.5" />
+    <rect x="35" y="11" width="4" height="4" fill="#ffffff" rx="0.5" />
+    
+    <!-- Outils -->
+    <!-- Clé à molette -->
+    <g transform="translate(48, 5) rotate(15)">
+      <circle cx="3" cy="3" r="2.5" fill="url(#purpleGradient)" />
+      <rect x="2.5" y="3" width="1" height="6" fill="url(#purpleGradient)" />
+      <rect x="1.5" y="7" width="3" height="1" fill="url(#purpleGradient)" />
+    </g>
+    
+    <!-- Tournevis -->
+    <g transform="translate(52, 12) rotate(-20)">
+      <rect x="0" y="0" width="1" height="8" fill="url(#purpleGradient)" />
+      <rect x="0" y="0" width="3" height="1" fill="url(#purpleGradient)" />
+    </g>
+  </g>
+  
+  <!-- Texte FixyHome -->
+  <text x="75" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#blueGradient)">
+    Fixy
+  </text>
+  <text x="115" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="300" fill="url(#purpleGradient)">
+    Home
+  </text>
+  
+  <!-- Tagline -->
+  <text x="75" y="48" font-family="Arial, sans-serif" font-size="8" fill="#6B7280" font-weight="400">
+    Votre artisan, juste à côté
+  </text>
+</svg>

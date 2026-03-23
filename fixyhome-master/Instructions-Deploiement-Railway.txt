@@ -1,0 +1,84 @@
+Instructions de déploiement Railway - FixyHome
+==============================================
+
+## 🚀 Configuration terminée
+
+Le projet FixyHome est maintenant configuré pour le déploiement sur Railway avec la même structure que PureSkin-etudiant.
+
+## 📁 Fichiers de configuration créés/modifiés
+
+### 1. railway.toml (Configuration principale)
+- Build avec NIXPACKS
+- Health check sur /actuator/health
+- Variables d'environnement configurées
+- Service backend configuré
+
+### 2. nixpacks.toml (Configuration de build)
+- Installation des dépendances Maven et Node.js
+- Build du backend Spring Boot
+- Build du frontend Next.js
+- Démarrage automatique du backend
+
+### 3. Procfile (Commande de démarrage)
+- Démarrage du JAR Spring Boot
+
+### 4. Variables-Railway.txt (Guide des variables)
+- Liste complète des variables nécessaires
+- Instructions de configuration
+
+### 5. backend/pom.xml (Dépendance ajoutée)
+- Spring Boot Actuator pour le health check
+
+### 6. backend/src/main/resources/application.properties
+- Configuration Actuator ajoutée
+- Health check endpoint activé
+
+## 🔄 Étapes de déploiement
+
+### 1. Préparation du repository
+```bash
+git add .
+git commit -m "Configure FixyHome for Railway deployment"
+git push origin main
+```
+
+### 2. Configuration Railway
+1. Connectez-vous sur https://railway.app
+2. Créez un nouveau projet
+3. Connectez votre repository GitHub
+4. Railway détectera automatiquement la configuration
+
+### 3. Variables d'environnement à configurer
+Dans le dashboard Railway → Variables, ajoutez :
+
+**Obligatoires :**
+- JWT_SECRET=votre-secret-key-super-secure-changez-cela
+- SPRING_PROFILES_ACTIVE=prod
+
+**Optionnelles :**
+- CORS_ALLOWED_ORIGINS=https://votre-frontend-domain.railway.app
+- SPRING_JPA_HIBERNATE_DDL_AUTO=update
+- SPRING_JPA_SHOW_SQL=false
+
+**Fournies par Railway automatiquement :**
+- DATABASE_URL
+- DATABASE_USER  
+- DATABASE_PASSWORD
+
+## ✅ Vérification du déploiement
+
+Une fois déployé, vérifiez :
+1. Health check : https://votre-app.railway.app/actuator/health
+2. API endpoints : https://votre-app.railway.app/api/...
+3. Logs dans le dashboard Railway
+
+## 🔧 Points clés de la configuration
+
+- **Port** : 8080 (Spring Boot)
+- **Health check** : /actuator/health
+- **Build** : Maven + npm
+- **Base de données** : PostgreSQL (Railway)
+- **Authentification** : JWT
+- **Framework** : Spring Boot 3.2.0 + Next.js 16.1.6
+
+La configuration est maintenant identique à PureSkin-etudiant et prête pour le déploiement !

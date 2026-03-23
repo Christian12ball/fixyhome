@@ -1,0 +1,55 @@
+Variables d'environnement pour Railway - FixyHome
+===================================
+Définissez ces variables dans votre projet Railway
+
+# =============================================
+# BASE DE DONNÉES POSTGRESQL (Railway la fournit automatiquement)
+# =============================================
+# DATABASE_URL - Généré automatiquement par Railway
+# DATABASE_USER - Généré automatiquement par Railway  
+# DATABASE_PASSWORD - Généré automatiquement par Railway
+
+# =============================================
+# CONFIGURATION JWT (Obligatoire)
+# =============================================
+JWT_SECRET=votre-secret-key-super-secure-changez-cela
+
+# =============================================
+# CONFIGURATION SPRING BOOT
+# =============================================
+SPRING_PROFILES_ACTIVE=prod
+SPRING_JPA_HIBERNATE_DDL_AUTO=update
+SPRING_JPA_SHOW_SQL=false
+
+# =============================================
+# CONFIGURATION CORS (Adapter avec votre domaine frontend)
+# =============================================
+CORS_ALLOWED_ORIGINS=https://votre-frontend-domain.railway.app
+
+# =============================================
+# VARIABLES AUTOMATIQUES RAILWAY
+# =============================================
+# RAILWAY_PUBLIC_DOMAIN - URL de votre application
+# RAILWAY_ENVIRONMENT - Environment (production/staging)
+# RAILWAY_PROJECT_NAME - Nom du projet
+
+===================================
+Instructions de déploiement Railway:
+
+1. Connectez-vous à Railway (https://railway.app)
+2. Créez un nouveau projet
+3. Connectez votre repository GitHub
+4. Ajoutez les variables d'environnement ci-dessus
+5. Déployez automatiquement via GitHub Actions
+
+Variables fournies automatiquement par Railway:
+- DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD (PostgreSQL)
+- RAILWAY_PUBLIC_DOMAIN (URL de l'app)
+- RAILWAY_ENVIRONMENT
+
+===================================
+Configuration spécifique FixyHome:
+
+Le backend Spring Boot s'exécutera sur le port 8080
+Le frontend Next.js sera servi séparément si nécessaire
+La health check sera disponible sur /actuator/health

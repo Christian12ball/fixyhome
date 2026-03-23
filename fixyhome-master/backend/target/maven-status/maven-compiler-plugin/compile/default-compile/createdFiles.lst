@@ -9,6 +9,8 @@ com\fixyhome\security\JwtAuthenticationFilter.class
 com\fixyhome\model\ServiceType.class
 com\fixyhome\controller\ArtisanController.class
 com\fixyhome\repository\ServiceRequestRepository.class
+com\fixyhome\config\AppConfig.class
+com\fixyhome\FixyHomeApplication.class
 com\fixyhome\model\UserType.class
 com\fixyhome\model\NotificationType.class
 com\fixyhome\security\SecurityConfig.class
@@ -29,6 +31,7 @@ com\fixyhome\controller\InterventionController.class
 com\fixyhome\controller\ServiceRequestController.class
 com\fixyhome\model\ServiceRequest.class
 com\fixyhome\controller\FarotyTokenController.class
+com\fixyhome\config\CustomPostgreSQLDialect.class
 com\fixyhome\service\NotificationService.class
 com\fixyhome\controller\UtilController.class
 com\fixyhome\controller\ServiceCategoryController.class
