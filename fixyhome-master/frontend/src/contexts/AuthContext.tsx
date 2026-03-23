@@ -63,7 +63,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // Essayer d'abord la connexion via le backend PostgreSQL
       try {
-        const response = await fetch('http://localhost:8080/api/users/authenticate', {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+        const response = await fetch(`${apiUrl}/api/users/authenticate`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -259,8 +260,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       
       // Essayer d'abord de s'enregistrer dans la base de données via le backend
       try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
         if (userData.userType === 'ARTISAN') {
-          response = await fetch('http://localhost:8080/api/artisans/register', {
+          response = await fetch(`${apiUrl}/api/artisans/register`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -271,7 +273,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             body: JSON.stringify(userData),
           });
         } else {
-          response = await fetch('http://localhost:8080/api/client/register', {
+          response = await fetch(`${apiUrl}/api/client/register`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

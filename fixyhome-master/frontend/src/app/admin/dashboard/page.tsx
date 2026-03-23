@@ -141,7 +141,8 @@ export default function AdminDashboard() {
         'Cache-Control': 'no-cache'
       };
 
-      const statsRes = await fetch('http://localhost:8080/api/admin/dashboard/stats', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+      const statsRes = await fetch(`${apiUrl}/api/admin/dashboard/stats`, {
         method: 'GET',
         headers,
         mode: 'cors'
