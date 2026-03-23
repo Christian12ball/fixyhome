@@ -156,7 +156,8 @@ export const ProfileProvider: React.FC<ProfileProviderProps> = ({ children }) =>
       }
 
       // Vérifier le mot de passe en appelant l'API de connexion
-      const response = await fetch('http://localhost:8080/api/auth/login', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+      const response = await fetch(`${apiUrl}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

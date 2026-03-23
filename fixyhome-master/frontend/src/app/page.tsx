@@ -42,7 +42,8 @@ export default function Home() {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/services/public/categories', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+      const response = await fetch(`${apiUrl}/api/services/public/categories`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +99,8 @@ const getDefaultCategories = () => [
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/reviews', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+      const response = await fetch(`${apiUrl}/api/reviews`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',

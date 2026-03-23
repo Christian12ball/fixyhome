@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Fix pour TailwindCSS resolution
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'tailwindcss': require.resolve('tailwindcss'),
-    };
-    return config;
+  output: "standalone",
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080",
+    NEXT_PUBLIC_API_TIMEOUT: process.env.NEXT_PUBLIC_API_TIMEOUT || "30000",
   },
 };
 
